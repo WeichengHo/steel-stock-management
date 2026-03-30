@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8fafc; /* Softer gray background */
+  --foreground: #0f172a;
+  --primary: #2563eb;
+  --primary-foreground: #ffffff;
+  --accent: #059669; /* Deep Emerald Green for a calm, senior-friendly contrast */
+  --surface: #ffffff;
+  --danger: #ef4444;
+  --border-idle: #e2e8f0;
+  --border-hover: #3b82f6;
+  --accent-surface: #ecfdf5; /* Emerald-50 */
+  --accent-border: #6ee7b7; /* Emerald-300 */
+  --font-size-base: 18px;
+  --font-size-lg: 22px;
+  --font-size-xl: 28px;
+  --touch-target-size: 56px; /* Slightly larger for precision */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-surface: var(--surface);
+  --color-danger: var(--danger);
+  --color-border-idle: var(--border-idle);
+  --color-border-hover: var(--border-hover);
+  --color-accent-surface: var(--accent-surface);
+  --color-accent-border: var(--accent-border);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #020617;
+    --foreground: #f8fafc;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+}
+
+/* Senior-Friendly Refined Utility Classes */
+@utility text-senior-base { font-size: var(--font-size-base); }
+@utility text-senior-lg { font-size: var(--font-size-lg); font-weight: 700; letter-spacing: -0.01em; }
+@utility text-senior-xl { font-size: var(--font-size-xl); font-weight: 900; letter-spacing: -0.02em; }
+
+@utility card-senior {
+  background-color: var(--surface);
+  border: 1px solid var(--border-idle); /* Thinner, cleaner border */
+  border-radius: 32px; /* Extra large radius for premium feel */
+  padding: 24px;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    border-color: var(--border-hover);
+    box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.05), 0 8px 10px -6px rgb(0 0 0 / 0.05);
+    transform: translateY(-2px);
+  }
+}
+
+@utility btn-senior {
+  min-height: var(--touch-target-size);
+  padding: 12px 28px;
+  border-radius: 20px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:active {
+    transform: scale(0.96);
+    filter: brightness(0.95);
+  }
+}
+
+@utility btn-primary-senior {
+  @apply btn-senior;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.25);
+}
+
+@utility input-senior {
+  min-height: var(--touch-target-size);
+  font-size: var(--font-size-base);
+  padding: 12px 20px;
+  border: 2px solid var(--border-idle);
+  border-radius: 18px;
+  width: 100%;
+  background-color: white;
+  transition: all 0.2s ease;
+
+  &:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+  }
+}
+
+@utility input-accent-senior {
+  @apply input-senior;
+  background-color: #ffffff; /* Removed loud background */
+  border-color: var(--border-idle);
+  color: var(--accent);
+
+  &:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(5, 150, 105, 0.1); /* Emerald-600 with 10% opacity */
+  }
+}
+
+@utility glass-bar {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}

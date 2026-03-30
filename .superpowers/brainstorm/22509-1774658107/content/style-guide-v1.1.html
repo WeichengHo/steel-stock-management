@@ -1,0 +1,77 @@
+<h2>IronStore 設計風格手冊 (v1.1) - 強化視覺反饋</h2>
+<p class="subtitle">針對 50 歲以上鋼鐵業用戶優化的「顯著提醒」與「狀態反饋」</p>
+
+<div class="section">
+  <h3>1. 顯目邊框與狀態 (Focus & Visual Cues)</h3>
+  <p class="subtitle">確保用戶清楚知道目前正在操作哪一個區塊</p>
+
+  <div class="options">
+    <div class="option" data-choice="card-idle">
+      <div class="letter">1</div>
+      <div class="content">
+        <h3>預設狀態 (Idle)</h3>
+        <p>使用 <code>border-blue-100</code> (淡藍邊框)，建立基本的區塊感而不刺眼。</p>
+        <div style="border: 2px solid #dbeafe; padding: 12px; border-radius: 12px; background: white; margin-top: 8px;">
+          內容區塊範例
+        </div>
+      </div>
+    </div>
+
+    <div class="option" data-choice="card-hover">
+      <div class="letter">2</div>
+      <div class="content">
+        <h3>懸停與選中 (Hover/Focus)</h3>
+        <p>邊框加深至 <code>border-blue-300</code>，並加入 <code>shadow-md</code> 提升立體感。</p>
+        <div style="border: 2px solid #93c5fd; padding: 12px; border-radius: 12px; background: white; margin-top: 8px; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);">
+          滑鼠經過時的效果
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>2. 關鍵欄位強調 (Field Emphasis)</h3>
+  <div class="split">
+    <div class="mockup">
+      <div class="mockup-header">廠商與時間 (基礎重要)</div>
+      <div class="mockup-body">
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 16px; border-radius: 16px;">
+          <div class="label" style="color: #3b82f6;">🏢 進貨廠商</div>
+          <div style="font-weight: 700; font-size: 18px; margin-top: 4px;">A 鋼鐵廠</div>
+        </div>
+      </div>
+    </div>
+    <div class="mockup">
+      <div class="mockup-header">成本與數量 (絕對重要)</div>
+      <div class="mockup-body">
+        <div style="background: #fff7ed; border: 2px solid #fed7aa; padding: 16px; border-radius: 16px; box-shadow: 0 0 0 2px #ffedd5;">
+          <div class="label" style="color: #c2410c;">💰 每噸成本</div>
+          <div style="font-weight: 900; font-size: 22px; color: #c2410c; margin-top: 4px;">21,500 元</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>3. 互動回饋規範 (Interaction Feedback)</h3>
+  <div class="pros-cons">
+    <div class="pros">
+      <h4>顯目提醒 (Do)</h4>
+      <ul>
+        <li><strong>邊框加粗：</strong> 焦點欄位使用 2px 實線邊框。</li>
+        <li><strong>陰影深度：</strong> 懸停時加入微影 (Shadow) 增加層次。</li>
+        <li><strong>顏色語意：</strong> 進貨用藍/橘，刪除用紅，存檔用深藍。</li>
+      </ul>
+    </div>
+    <div class="cons">
+      <h4>避免使用 (Don't)</h4>
+      <ul>
+        <li><strong>僅靠顏色：</strong> 不要只用顏色區分，應搭配邊框或圖示。</li>
+        <li><strong>隱藏按鈕：</strong> 所有的刪除或修改按鈕都必須直接可見。</li>
+        <li><strong>無回饋點擊：</strong> 按下按鈕時必須有微縮 (Scale-95) 效果。</li>
+      </ul>
+    </div>
+  </div>
+</div>

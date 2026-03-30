@@ -1,0 +1,43 @@
+<h2>新增動作按鈕佈局建議</h2>
+<p class="subtitle">針對 IronStore 的操作流進行優化分析</p>
+
+<div class="section">
+  <h3>方案 A：放在資料尾部 (推薦：適合連續輸入)</h3>
+  <div class="mockup">
+    <div class="mockup-body" style="background: #f8fafc; padding: 12px; border-radius: 20px;">
+      <div class="card-senior" style="margin-bottom: 12px; background: white;">卡片 1 (已填完)</div>
+      <div class="card-senior" style="margin-bottom: 16px; background: white;">卡片 2 (已填完)</div>
+      <button style="width: 100%; py: 16px; border: 2px dashed #93c5fd; border-radius: 24px; color: #2563eb; font-weight: 700; height: 60px; background: white;">
+        + 新增下一筆進貨 (推薦位置)
+      </button>
+      <div style="height: 100px;"></div>
+    </div>
+  </div>
+  <p class="text-sm" style="margin-top: 8px;">✅ 符合操作心理流，填完一筆立刻看到下一筆按鈕。</p>
+</div>
+
+<div class="section">
+  <h3>方案 B：固定在頂部 (適合查看為主的頁面)</h3>
+  <div class="mockup">
+    <div class="mockup-body" style="background: #f8fafc; padding: 12px; border-radius: 20px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+        <h2 style="font-size: 20px; font-weight: 900;">資料清單</h2>
+        <button style="background: #2563eb; color: white; width: 44px; height: 44px; border-radius: 12px;">+</button>
+      </div>
+      <div class="card-senior" style="margin-bottom: 12px; background: white;">資料 1</div>
+      <div class="card-senior" style="margin-bottom: 12px; background: white;">資料 2</div>
+    </div>
+  </div>
+  <p class="text-sm" style="margin-top: 8px;">❌ 當資料很多時，用戶需要滑回頂部才能新增。</p>
+</div>
+
+<div class="section">
+  <h3>方案 C：固定在右下角 (Floating Action Button)</h3>
+  <div class="mockup">
+    <div class="mockup-body" style="background: #f8fafc; padding: 12px; border-radius: 20px; position: relative; height: 200px;">
+      <div class="card-senior" style="margin-bottom: 12px; background: white;">資料項目...</div>
+      <button style="position: absolute; bottom: 20px; right: 20px; width: 60px; height: 60px; background: #2563eb; color: white; border-radius: 50%; shadow: 0 4px 10px rgba(0,0,0,0.3); font-size: 30px;">+</button>
+    </div>
+  </div>
+  <p class="text-sm" style="margin-top: 8px;">⚠️ 對於高齡用戶，這種類似 Android 的懸浮按鈕有時會遮擋內容。</p>
+</div>
