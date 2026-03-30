@@ -1,4 +1,4 @@
-# IronStore 設計風格手冊 (Style Guide) v1.2
+# steel-stock-management 設計風格手冊 (Style Guide) v1.2
 
 ## 核心願景
 針對 50 歲以上鋼鐵產業用戶優化的「行動優先」設計語言，強調高對比、超大點擊區域、以及明確的狀態反饋。

@@ -1,7 +1,7 @@
-# Product Definition: IronStore
+# Product Definition: steel-stock-management
 
 ## Core Vision
-IronStore is a mobile-first, streamlined inventory management system specifically tailored for users aged 50+ in the steel industry. Its primary goal is to record and track incoming rebar inventory with precise **Cost per Ton** (每噸成本) tracking and outgoing shipments using FIFO logic, providing interactive, size-grouped visual price trends for better purchasing decisions.
+steel-stock-management is a mobile-first, streamlined inventory management system specifically tailored for users aged 50+ in the steel industry. Its primary goal is to record and track incoming rebar inventory with precise **Cost per Ton** (每噸成本) tracking and outgoing shipments using FIFO logic, providing interactive, size-grouped visual price trends for better purchasing decisions.
 
 ## Key Features
 - **Mobile-Optimized Interface**: Large touch targets, simplified navigation, and high-contrast visuals for smartphone-centric usage.

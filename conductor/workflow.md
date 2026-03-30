@@ -1,4 +1,4 @@
-# Workflow: IronStore
+# Workflow: steel-stock-management
 
 ## Development Process
 1. **Research & Design**: Define specifications in the track's `spec.md`.

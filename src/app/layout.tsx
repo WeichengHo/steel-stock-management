@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "IronStore - 簡易庫存管理",
+  title: "steel-stock-management - 簡易庫存管理",
   description: "專為長輩設計的行動優先庫存管理系統",
   manifest: "/manifest.json",
 };

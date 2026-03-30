@@ -1,4 +1,4 @@
--- Migration: Create initial schema for IronStore
+-- Migration: Create initial schema for steel-stock-management
 -- Track: inventory-core
 -- Features: FIFO support, Batch tracking
 
