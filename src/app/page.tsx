@@ -126,7 +126,7 @@ export default function Home() {
               <Tooltip
                 contentStyle={{ borderRadius: '24px', border: 'none', boxShadow: '0 10px 30px rgba(0,0,0,0.1)', fontWeight: 700, padding: '12px 20px' }}
                 itemStyle={{ color: activeLine?.color, fontWeight: 900 }}
-                formatter={(value: number) => [`$${Number(value).toLocaleString()}`, activeLine?.name]}
+                formatter={(value: any) => [`$${Number(value).toLocaleString()}`, activeLine?.name]}
               />
               <Line
                 type="monotone"
