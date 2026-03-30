@@ -87,7 +87,7 @@ export default function RestockPage() {
               data={item}
               suppliers={mockSuppliers}
               rebarSpecs={mockRebarSpecs}
-              onUpdate={(field, val) => updateItem(item.id, field, val)}
+              onUpdate={(field, val) => updateItem(item.id, field as keyof RestockItem, val)}
               onRemove={() => removeItem(item.id)}
             />
           ))}

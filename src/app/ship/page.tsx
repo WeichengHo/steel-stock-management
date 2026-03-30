@@ -81,7 +81,7 @@ export default function ShipPage() {
                             type="out"
                             data={item}
                             rebarSpecs={mockRebarSpecs}
-                            onUpdate={(field, val) => updateItem(item.id, field, val)}
+                            onUpdate={(field, val) => updateItem(item.id, field as keyof ShipItem, val)}
                             onRemove={() => removeItem(item.id)}
                         />
                     ))}
