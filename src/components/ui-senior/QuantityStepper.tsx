@@ -11,12 +11,12 @@ interface QuantityStepperProps {
   variant?: "primary" | "accent";
 }
 
-export function QuantityStepper({ 
-  value, 
-  onChange, 
-  min = 1, 
-  label, 
-  variant = "primary" 
+export function QuantityStepper({
+  value,
+  onChange,
+  min = 1,
+  label,
+  variant = "primary"
 }: QuantityStepperProps) {
   const isPrimary = variant === "primary";
 
@@ -40,8 +40,8 @@ export function QuantityStepper({
           onClick={() => onChange(value + 1)}
           className={cn(
             "w-12 h-12 flex items-center justify-center text-white rounded-xl shadow-md active:scale-90 transition-all border-2",
-            isPrimary 
-              ? "bg-primary border-primary/20 shadow-blue-100" 
+            isPrimary
+              ? "bg-primary border-primary/20 shadow-blue-100"
               : "bg-accent border-accent/20 shadow-amber-100"
           )}
         >

@@ -1,4 +1,4 @@
-# Tech Stack: IronStore
+# Tech Stack: steel-stock-management
 
 ## Frontend
 - **Framework**: Next.js (TypeScript) - Using App Router for modern, efficient routing.

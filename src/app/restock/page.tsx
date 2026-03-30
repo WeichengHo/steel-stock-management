@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { PageHeader } from "@/components/ui-senior/PageHeader";
 import { TransactionCard } from "@/components/ui-senior/TransactionCard";
@@ -19,27 +19,30 @@ export default function RestockPage() {
     return now.toISOString().slice(0, 16);
   };
 
-  const [items, setItems] = useState<any[]>([
-    {
-      id: Date.now(),
-      supplier: mockSuppliers[0],
-      date: "",
-      code: mockRebarSpecs[0],
-      qty: 1,
-      cost: 0
-    }
-  ]);
+  interface RestockItem {
+    id: string;
+    supplier: string;
+    date: string;
+    code: string;
+    qty: number;
+    cost: number;
+  }
 
-  useEffect(() => {
-    setItems((prev) => prev.map(item => ({ ...item, date: getNowFormatted() })));
-  }, []);
+  const [items, setItems] = useState<RestockItem[]>(() => [{
+    id: typeof crypto !== 'undefined' ? crypto.randomUUID() : 'initial-id',
+    supplier: mockSuppliers[0],
+    date: getNowFormatted(),
+    code: mockRebarSpecs[0],
+    qty: 1,
+    cost: 0
+  }]);
 
   const addItem = () => {
     const lastItem = items[items.length - 1];
     setItems([
       ...items,
       {
-        id: Date.now(),
+        id: crypto.randomUUID(),
         supplier: lastItem ? lastItem.supplier : mockSuppliers[0],
         date: lastItem ? lastItem.date : getNowFormatted(),
         code: mockRebarSpecs[0],
@@ -49,11 +52,11 @@ export default function RestockPage() {
     ]);
   };
 
-  const removeItem = (id: number) => {
+  const removeItem = (id: string) => {
     setItems(items.filter((item) => item.id !== id));
   };
 
-  const updateItem = (id: number, field: string, value: any) => {
+  const updateItem = (id: string, field: keyof RestockItem, value: string | number) => {
     setItems(items.map(item => item.id === id ? { ...item, [field]: value } : item));
   };
 
@@ -70,9 +73,9 @@ export default function RestockPage() {
   return (
     <>
       <div className="space-y-6 pb-48">
-        <PageHeader 
-          title="多筆進貨登錄" 
-          subtitle="您可在此一次新增來自不同廠商、不同時間的多筆進貨單。" 
+        <PageHeader
+          title="多筆進貨登錄"
+          subtitle="您可在此一次新增來自不同廠商、不同時間的多筆進貨單。"
         />
 
         <div className="space-y-6 mt-4">
@@ -91,7 +94,7 @@ export default function RestockPage() {
         </div>
       </div>
 
-      <ActionButtonBar 
+      <ActionButtonBar
         onAdd={addItem}
         onSave={handleSave}
         addLabel="下一筆"

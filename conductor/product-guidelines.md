@@ -1,4 +1,4 @@
-# Product Guidelines: IronStore
+# Product Guidelines: steel-stock-management
 
 ## Visual Style (Mobile & Senior-Friendly Focus)
 - **Mobile-First**: The UI is primarily designed for portrait smartphone screens.

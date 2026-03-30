@@ -1,7 +1,7 @@
-# Product Definition: IronStore
+# Product Definition: steel-stock-management
 
 ## Core Vision
-IronStore is a mobile-first, streamlined inventory management system specifically tailored for users aged 50+ in the steel industry. Its primary goal is to record and track incoming rebar inventory with precise **Cost per Ton** (每噸成本) tracking and outgoing shipments using FIFO logic, providing interactive, size-grouped visual price trends for better purchasing decisions.
+steel-stock-management is a mobile-first, streamlined inventory management system specifically tailored for users aged 50+ in the steel industry. Its primary goal is to record and track incoming rebar inventory with precise **Cost per Ton** (每噸成本) tracking and outgoing shipments using FIFO logic, providing interactive, size-grouped visual price trends for better purchasing decisions.
 
 ## Key Features
 - **Mobile-Optimized Interface**: Large touch targets, simplified navigation, and high-contrast visuals for smartphone-centric usage.
@@ -9,7 +9,7 @@ IronStore is a mobile-first, streamlined inventory management system specificall
 - **Rebar Specification Management**: Preloaded with CNS 560 standards using "Fen" (分) nomenclature (e.g., 4分筋 #4 D13).
 - **Restock with Cost Tracking**: Detailed record-keeping of incoming inventory including supplier, quantity (tons), and **Cost per Ton** (元/噸).
 - **FIFO Inventory Deduction**: Automatic stock deduction starting from the oldest batches to ensure accurate inventory valuation.
-- **Advanced Analytical History**: 
+- **Advanced Analytical History**:
     - Separate tabs for Inbound (Restock) and Outbound (Shipment) logs.
     - Automatic grouping of restock records by English rebar sizes (#3, #4, etc.).
     - Interactive **Price Trend Charts** that sync with rebar size selections.

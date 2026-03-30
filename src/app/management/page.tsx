@@ -1,11 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { Building2, Plus, Trash2, Ruler, CheckCircle2 } from "lucide-react";
+import { Building2, Plus, Trash2, CheckCircle2 } from "lucide-react";
 import { PageHeader } from "@/components/ui-senior/PageHeader";
 import { SeniorCard } from "@/components/ui-senior/SeniorCard";
 import { SeniorInput } from "@/components/ui-senior/SeniorForm";
 import { ActionButtonBar } from "@/components/ui-senior/ActionButtonBar";
+import { SeniorRadioGroup } from "@/components/ui-senior/SeniorRadioGroup";
 
 // CNS 560 Standards
 const CNS560_STANDARDS = [
@@ -17,7 +18,6 @@ const CNS560_STANDARDS = [
 
 export default function ManagementPage() {
   const [activeTab, setActiveTab] = useState<"suppliers" | "specs">("suppliers");
-  
   // Suppliers State
   const [suppliers, setSuppliers] = useState(["A 公司", "B 貿易", "C 批發"]);
   const [newSupplier, setNewSupplier] = useState("");
@@ -44,27 +44,21 @@ export default function ManagementPage() {
 
   return (
     <div className="space-y-8 pb-32">
-      <PageHeader 
-        title="基本資料管理" 
-        icon={Building2} 
+      <PageHeader
+        title="基本資料管理"
+        icon={Building2}
         subtitle="維護您的廠商清單與鋼筋規格標準。"
       />
 
       {/* 頁面切換 */}
-      <div className="flex bg-surface p-2 rounded-[32px] border-2 border-border-idle mx-1">
-        <button
-          onClick={() => setActiveTab("suppliers")}
-          className={`flex-1 btn-senior rounded-2xl transition-all ${activeTab === "suppliers" ? "bg-white shadow-md text-primary font-black border-2 border-border-idle" : "text-slate-400 font-bold"}`}
-        >
-          廠商名單
-        </button>
-        <button
-          onClick={() => setActiveTab("specs")}
-          className={`flex-1 btn-senior rounded-2xl transition-all ${activeTab === "specs" ? "bg-white shadow-md text-primary font-black border-2 border-border-idle" : "text-slate-400 font-bold"}`}
-        >
-          規格標準
-        </button>
-      </div>
+      <SeniorRadioGroup
+        value={activeTab}
+        onChange={(val) => setActiveTab(val as "suppliers" | "specs")}
+        options={[
+          { value: "suppliers", label: "廠商名單" },
+          { value: "specs", label: "規格標準" }
+        ]}
+      />
 
       <div className="px-1">
         {activeTab === "suppliers" ? (

@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { Package, TrendingUp, History, Activity, Building2 } from "lucide-react";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { PageHeader } from "@/components/ui-senior/PageHeader";
@@ -95,8 +95,8 @@ export default function Home() {
               key={k.key}
               onClick={() => setSelectedChartSize(k.key)}
               className={`snap-center shrink-0 px-4 py-3 rounded-2xl font-black text-sm transition-all active:scale-95 ${selectedChartSize === k.key
-                  ? "bg-primary text-white shadow-md shadow-blue-200"
-                  : "bg-white border-2 border-border-idle text-slate-500 hover:border-border-hover"
+                ? "bg-primary text-white shadow-md shadow-blue-200"
+                : "bg-white border-2 border-border-idle text-slate-500 hover:border-border-hover"
                 }`}
             >
               {k.name}
@@ -120,13 +120,13 @@ export default function Home() {
                 tickLine={false}
                 tick={{ fontSize: 12, fontWeight: 700, fill: '#94a3b8' }}
                 domain={['auto', 'auto']}
-                tickFormatter={(value) => `$${(value/1000).toFixed(1)}k`}
+                tickFormatter={(value) => `$${(value / 1000).toFixed(1)}k`}
                 dx={-10}
               />
               <Tooltip
                 contentStyle={{ borderRadius: '24px', border: 'none', boxShadow: '0 10px 30px rgba(0,0,0,0.1)', fontWeight: 700, padding: '12px 20px' }}
                 itemStyle={{ color: activeLine?.color, fontWeight: 900 }}
-                formatter={(value: any) => [`$${Number(value).toLocaleString()}`, activeLine?.name]}
+                formatter={(value: number) => [`$${Number(value).toLocaleString()}`, activeLine?.name]}
               />
               <Line
                 type="monotone"

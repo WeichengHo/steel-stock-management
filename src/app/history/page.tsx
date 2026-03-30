@@ -7,14 +7,6 @@ import { SeniorCard } from "@/components/ui-senior/SeniorCard";
 import { SeniorSelect } from "@/components/ui-senior/SeniorForm";
 import { SeniorRadioGroup } from "@/components/ui-senior/SeniorRadioGroup";
 
-// CNS 560 規格清單
-const rebarSpecs = [
-  { id: "#3", label: "3分筋 (#3)", fullName: "3分筋 (#3 D10)" },
-  { id: "#4", label: "4分筋 (#4)", fullName: "4分筋 (#4 D13)" },
-  { id: "#5", label: "5分筋 (#5)", fullName: "5分筋 (#5 D16)" },
-  { id: "#6", label: "6分筋 (#6)", fullName: "6分筋 (#6 D19)" },
-];
-
 const mockSuppliers = ["A 鋼鐵廠", "B 貿易商", "C 資源回收"];
 
 const initialInventory = [
@@ -41,8 +33,8 @@ export default function HistoryPage() {
   const [selectedSupplier, setSelectedSupplier] = useState("全部");
 
   // State for inventory and shipments to support FIFO updates
-  const [inventoryList, setInventoryList] = useState(initialInventory);
-  const [shipmentHistory, setShipmentHistory] = useState(initialShipments);
+  const [inventoryList] = useState(initialInventory);
+  const [shipmentHistory] = useState(initialShipments);
 
   // --- Summary Logic ---
   const monthlyStats = useMemo(() => {
@@ -103,7 +95,7 @@ export default function HistoryPage() {
       <PageHeader
         title="紀錄與月結"
         action={
-          <button 
+          <button
             onClick={handleExport}
             className="bg-white border-2 border-primary text-primary p-3 rounded-2xl flex items-center gap-2 font-black text-sm active:scale-95 transition-all shadow-sm"
           >
@@ -114,30 +106,30 @@ export default function HistoryPage() {
       />
 
       {/* 月結統計卡片 */}
-      <SeniorCard className="bg-primary text-white border-0 shadow-lg shadow-blue-200 space-y-4">
-        <div className="flex items-center gap-2 opacity-90">
+      <SeniorCard className="bg-white space-y-4 border border-border-idle">
+        <div className="flex items-center gap-2 text-primary">
           <Calculator size={20} />
-          <span className="font-bold tracking-wider">{new Date().getMonth() + 1} 月數據統計</span>
+          <span className="font-bold tracking-wider text-slate-700">{new Date().getMonth() + 1} 月數據統計</span>
         </div>
-        
+
         <div className="grid grid-cols-2 gap-4">
-          <div className="bg-white/15 p-4 rounded-2xl backdrop-blur-sm border border-white/10">
-            <p className="text-xs font-bold opacity-80 mb-1 text-white">總進貨噸數</p>
-            <p className="text-2xl font-black text-white">{monthlyStats.inTons.toLocaleString()} <span className="text-xs font-normal">噸</span></p>
+          <div className="bg-surface p-4 rounded-2xl border border-border-idle">
+            <p className="text-xs font-bold text-slate-500 mb-1">總進貨噸數</p>
+            <p className="text-2xl font-black text-slate-800">{monthlyStats.inTons.toLocaleString()} <span className="text-xs font-normal text-slate-500">噸</span></p>
           </div>
-          <div className="bg-white/15 p-4 rounded-2xl backdrop-blur-sm border border-white/10">
-            <p className="text-xs font-bold opacity-80 mb-1 text-white">總出貨噸數</p>
-            <p className="text-2xl font-black text-white">{monthlyStats.outTons.toLocaleString()} <span className="text-xs font-normal">噸</span></p>
+          <div className="bg-surface p-4 rounded-2xl border border-border-idle">
+            <p className="text-xs font-bold text-slate-500 mb-1">總出貨噸數</p>
+            <p className="text-2xl font-black text-slate-800">{monthlyStats.outTons.toLocaleString()} <span className="text-xs font-normal text-slate-500">噸</span></p>
           </div>
         </div>
 
-        <div className="pt-2 border-t border-white/10 flex justify-between items-end">
+        <div className="pt-2 border-t border-slate-100 flex justify-between items-end">
           <div>
-            <p className="text-xs font-bold opacity-80 mb-0.5 text-white">本月採購總金額</p>
-            <p className="text-xl font-black text-white">$ {monthlyStats.totalCost.toLocaleString()}</p>
+            <p className="text-xs font-bold text-slate-500 mb-0.5">本月採購總金額</p>
+            <p className="text-xl font-black text-slate-800">$ {monthlyStats.totalCost.toLocaleString()}</p>
           </div>
-          <button 
-            className="text-[10px] font-black bg-white text-primary px-3 py-1.5 rounded-full uppercase tracking-tighter"
+          <button
+            className="text-[10px] font-black bg-surface text-primary border border-border-idle px-3 py-1.5 rounded-full uppercase tracking-tighter"
             onClick={() => alert("詳細月報功能開發中")}
           >
             查看詳情

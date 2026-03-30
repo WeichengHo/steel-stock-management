@@ -1,6 +1,6 @@
-# IronStore - Project Context
+# steel-stock-management - Project Context
 
-Welcome to the **IronStore** project managed by Conductor.
+Welcome to the **steel-stock-management** project managed by Conductor.
 
 ## Project Documents
 - [Product Definition](./product.md)

@@ -10,10 +10,10 @@ interface ActionButtonBarProps {
   saveDisabled?: boolean;
 }
 
-export function ActionButtonBar({ 
-  onAdd, 
-  onSave, 
-  addLabel = "新增", 
+export function ActionButtonBar({
+  onAdd,
+  onSave,
+  addLabel = "新增",
   saveLabel = "確認存檔",
   saveDisabled = false
 }: ActionButtonBarProps) {

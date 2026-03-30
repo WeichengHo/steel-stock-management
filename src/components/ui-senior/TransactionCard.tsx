@@ -5,24 +5,33 @@ import { SeniorCard } from "./SeniorCard";
 import { SeniorSelect, SeniorInput } from "./SeniorForm";
 import { QuantityStepper } from "./QuantityStepper";
 
+interface TransactionData {
+  supplier?: string;
+  date: string;
+  note?: string;
+  code: string;
+  cost?: number;
+  qty: number;
+}
+
 interface TransactionCardProps {
   index: number;
   type: "in" | "out";
-  data: any;
+  data: TransactionData;
   suppliers?: string[];
   rebarSpecs: string[];
-  onUpdate: (field: string, value: any) => void;
+  onUpdate: (field: keyof TransactionData, value: string | number) => void;
   onRemove: () => void;
 }
 
-export function TransactionCard({ 
-  index, 
-  type, 
-  data, 
-  suppliers = [], 
-  rebarSpecs, 
-  onUpdate, 
-  onRemove 
+export function TransactionCard({
+  index,
+  type,
+  data,
+  suppliers = [],
+  rebarSpecs,
+  onUpdate,
+  onRemove
 }: TransactionCardProps) {
   const isIn = type === "in";
 
@@ -57,7 +66,7 @@ export function TransactionCard({
 
       <div className="space-y-2">
         <label className="text-sm font-bold text-slate-500 flex items-center gap-2 ml-1">
-          <Calendar size={16} className={isIn ? "text-primary" : "text-accent"} /> 
+          <Calendar size={16} className={isIn ? "text-primary" : "text-accent"} />
           {isIn ? "進貨時間" : "出貨時間"}
         </label>
         <div className="flex flex-col sm:flex-row gap-3 w-full">

@@ -10,10 +10,10 @@ interface SeniorRadioGroupProps {
   variant?: "primary" | "accent";
 }
 
-export function SeniorRadioGroup({ 
-  options, 
-  value, 
-  onChange, 
+export function SeniorRadioGroup({
+  options,
+  value,
+  onChange,
   className,
   variant = "primary"
 }: SeniorRadioGroupProps) {
@@ -33,7 +33,7 @@ export function SeniorRadioGroup({
             onClick={() => onChange(opt.value)}
             className={cn(
               "flex-1 py-4 px-2 rounded-[18px] text-lg font-black transition-all duration-200 active:scale-95",
-              isActive 
+              isActive
                 ? (isPrimary ? "bg-primary text-white shadow-md" : "bg-accent text-white shadow-md")
                 : "text-slate-400 hover:text-slate-600"
             )}

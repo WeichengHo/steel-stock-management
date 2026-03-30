@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, PackagePlus, History, Building2, Ruler, Truck } from "lucide-react";
+import { Home, PackagePlus, History, Building2, Truck } from "lucide-react";
 
 const navItems = [
   { label: "首頁", icon: Home, href: "/" },
@@ -24,9 +24,8 @@ export default function BottomNav() {
             <Link
               key={item.href}
               href={item.href}
-              className={`flex flex-col items-center justify-center w-full h-full transition-all active:bg-slate-50 ${
-                isActive ? "text-primary scale-110" : "text-slate-400"
-              }`}
+              className={`flex flex-col items-center justify-center w-full h-full transition-all active:bg-slate-50 ${isActive ? "text-primary scale-110" : "text-slate-400"
+                }`}
             >
               <item.icon size={28} strokeWidth={isActive ? 3 : 2} />
               <span className={`text-[10px] font-black mt-1.5 ${isActive ? "text-primary" : "text-slate-400"}`}>
