@@ -1,0 +1,5 @@
+{
+  "id": "inventory-core",
+  "status": "Planned",
+  "description": "Implement database schema and FIFO deduction logic"
+}

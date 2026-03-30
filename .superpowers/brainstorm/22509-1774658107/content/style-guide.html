@@ -1,0 +1,86 @@
+<h2>IronStore 設計風格手冊 (v1.0)</h2>
+<p class="subtitle">針對 50 歲以上鋼鐵業用戶優化的「行動優先」設計語言</p>
+
+<div class="section">
+  <h3>1. 色彩系統 (Color Palette)</h3>
+  <div class="cards" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem;">
+    <div class="card">
+      <div style="background: #2563eb; height: 80px; border-radius: 12px 12px 0 0;"></div>
+      <div class="card-body">
+        <div class="label">Primary Blue</div>
+        <strong>#2563eb</strong>
+        <p class="text-sm">主品牌色、確認按鈕、導航、主要提示</p>
+      </div>
+    </div>
+    <div class="card">
+      <div style="background: #c2410c; height: 80px; border-radius: 12px 12px 0 0;"></div>
+      <div class="card-body">
+        <div class="label">Cost Orange</div>
+        <strong>#c2410c</strong>
+        <p class="text-sm">成本相關數值、強調金額</p>
+      </div>
+    </div>
+    <div class="card">
+      <div style="background: #f8fafc; height: 80px; border-radius: 12px 12px 0 0; border: 1px solid #e2e8f0;"></div>
+      <div class="card-body">
+        <div class="label">Surface Gray</div>
+        <strong>#f8fafc</strong>
+        <p class="text-sm">卡片背景、輸入框背景、分區底色</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>2. 字體與標籤 (Typography)</h3>
+  <div class="mockup">
+    <div class="mockup-body">
+      <h1 style="font-size: 26px; font-weight: 700; color: #1e293b; margin-bottom: 8px;">📦 多筆進貨登錄 (Senior-XL)</h1>
+      <p style="font-size: 18px; font-weight: 700; color: #64748b; margin-bottom: 24px;">副標題：強調資訊的可讀性 (Senior-Bold)</p>
+      <div style="font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 4px; text-transform: uppercase;">表單標籤 (Label)</div>
+      <div style="font-size: 20px; font-weight: 900; color: #1e293b;">主要數值顯示 (Display)</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>3. 核心組件 (Core Components)</h3>
+  <div class="split">
+    <div class="mockup">
+      <div class="mockup-header">輸入組件 (Inputs)</div>
+      <div class="mockup-body" style="gap: 16px; display: flex; flex-direction: column;">
+        <div style="border: 2px solid #cbd5e1; border-radius: 12px; height: 52px; display: flex; align-items: center; padding: 0 16px; font-weight: 700;">標準輸入框 (Min 52px)</div>
+        <div style="background: #fff7ed; border: 2px solid #ffedd5; border-radius: 12px; height: 52px; display: flex; align-items: center; padding: 0 16px; color: #c2410c; font-weight: 700;">成本輸入框 (Orange Focus)</div>
+      </div>
+    </div>
+    <div class="mockup">
+      <div class="mockup-header">按鈕組件 (Buttons)</div>
+      <div class="mockup-body" style="gap: 16px; display: flex; flex-direction: column;">
+        <div style="background: #2563eb; color: white; border-radius: 16px; height: 60px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 20px; box-shadow: 0 8px 30px rgba(37, 99, 235, 0.3);">主要確認按鈕</div>
+        <div style="background: #eff6ff; border: 2px dashed #93c5fd; color: #2563eb; border-radius: 24px; height: 60px; display: flex; align-items: center; justify-content: center; font-weight: 700;">+ 新增下一筆 (Secondary)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>4. 佈局規範 (Layout Guidelines)</h3>
+  <div class="pros-cons">
+    <div class="pros">
+      <h4>設計原則</h4>
+      <ul>
+        <li><strong>超大點擊區域：</strong> 所有點擊目標至少 52px。</li>
+        <li><strong>圓角美學：</strong> 使用 Rounded-3xl (24px+) 營造友善感。</li>
+        <li><strong>對比明確：</strong> 邊框與背景必須有顯著差異。</li>
+      </ul>
+    </div>
+    <div class="cons">
+      <h4>避免使用</h4>
+      <ul>
+        <li><strong>過小的文字：</strong> 避免低於 16px 的正文。</li>
+        <li><strong>複雜手勢：</strong> 避免雙擊或複雜長按，以單擊為主。</li>
+        <li><strong>多欄佈局：</strong> 避免水平滾動，堅持垂直流動。</li>
+      </ul>
+    </div>
+  </div>
+</div>
